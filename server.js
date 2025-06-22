@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
-const baseUrl = process.env.BASE_URL;
+const baseUrl = process.env.VERCEL_URL;
 
 // save a note
 app.post('/api/note', async (req, res) => {
