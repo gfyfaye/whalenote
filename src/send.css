@@ -1,0 +1,128 @@
+
+#instructions {
+    font-size: 1.3em;
+    z-index: 2;
+    top: 0%;
+    left: 2%;
+    color: white;
+    position: absolute;
+    text-shadow: 1px 1px 2px rgb(201, 223, 255);
+    background-color: #296186;
+}
+
+.note-container {
+    display: flex;
+    flex-direction: column;
+}
+.notearea {
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 150px;
+    max-height: 150px;
+
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border-color: #d7eaea;
+    background-color: #d7eaea;
+    font-size: 1.2rem;
+    font-family: 'Gaegu', cursive;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+    z-index: 2;
+    top: 36%;
+    left: 15%;
+    position: absolute;
+}
+
+#charError {
+    z-index: 3;
+    top: calc(40% + 105px);
+    left: 34%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    color: #d95f7a;
+
+}
+#sealsharebtn {
+    position: absolute;
+    top: calc(38% + 180px);
+    left: 15%;
+    padding: 7px 15px;
+    font-family: 'Gaegu', cursive;
+    font-size: 1rem;
+    border: none;
+    color: white;
+    text-shadow: 1px 1px 2px rgb(201, 223, 255, 0.7);
+    background-color: #1f3b58;
+    border-radius: 12px;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 2px 2px 8px rgba(232, 231, 231, 0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#sealsharebtn:hover {
+  background-color: #3f6185;
+  transform: scale(1.05);
+}
+
+.result-message {
+  z-index: 3;
+  position: absolute;
+  top: 42%;
+  left: 11%;
+  font-family: 'Gaegu', cursive;
+  font-size: 1.2em;
+  color: white;
+  background-color: rgba(41, 97, 134, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  max-width: 70%;
+  word-wrap: break-word;
+  cursor: pointer;
+}
+
+.thought p {
+  z-index: 3;
+  position: absolute;
+  top: 21.8%;
+  left: 42.5%;
+  color: #4b4b4b;
+  width: 16vw;
+  text-align: center;
+  font-size: 1.2em;
+  opacity: 0.8;
+}
+
+.thought img{
+    position: absolute;
+    top: 19%;
+    left: 43%;
+    z-index: 3;
+    height: 20vh;
+    width: 16vw;
+    opacity: 80%;
+    transform: rotate(10deg);
+}
+
+
+.copiedMessage {
+  z-index: 3;
+  position: absolute;
+  top: 39%;
+  left: 39%;
+  color: white;
+  max-width: 70%;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.fade-element {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.fade-element.visible {
+  opacity: 0.8;
+}

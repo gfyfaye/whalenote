@@ -1,0 +1,119 @@
+.hidden {
+  display: none !important;
+}
+#noteInterface {
+  top: 16%;
+  left: 17%;
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  opacity: 0.97;
+}
+
+#clickPrompt {
+  color: white;
+  font-family: 'Gaegu', cursive;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  text-shadow: 2px 2px 2px rgb(255, 255, 255, 0.6);
+}
+
+#progressContainer {
+  width: 180px;
+  height: 9px;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 15px;
+  box-shadow: 2px 2px 5px rgb(255, 255, 255, 0.6);
+}
+
+#progressBar {
+  width: 0%;
+  height: 100%;
+  background: #fecd7c;
+  transition: width 0.3s ease;
+}
+
+#noteError {
+  position: absolute;
+  top: 40%;
+  left: 16%;
+  color: white;
+  font-size: 2rem;
+  z-index: 4;
+  align-items: center;
+  text-shadow: 2px 2px 2px rgb(255, 255, 255, 0.6);
+}
+
+#animation {
+  width: 330px;
+  height: 330px;
+}
+
+#hearts {
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 5;
+  transform: translate(-50%, -80%);
+}
+
+
+#noteSheet {
+  top: 25%;
+  left: 29%;
+  transform: translateX(-50%) scale(0.3);
+  opacity: 0;
+  transition: all 0.8s ease;
+  z-index: 5;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  margin-top: 200px;
+  margin-left: 0%;
+}
+
+#noteSheet.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+#noteSheet img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 3px 3px 30px rgba(225, 225, 225, 0.6);
+}
+
+#notecontent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -50%);
+  max-height: 80%;
+  overflow-y: auto;
+  color: #fff8c9;
+  font-family: 'Gaegu', cursive;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  word-break: break-word;
+
+  text-shadow:
+    1px 1px 2px #000,
+    0 0 6px #ffffff,
+    0 0 12px #ffe57f,
+    0 0 18px #ffd740; 
+  
+  animation: glowPulse 1s infinite ease-in-out;
+}

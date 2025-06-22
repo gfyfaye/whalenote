@@ -29,7 +29,7 @@ app.post('/api/note', async (req, res) => {
   return res.status(200).json({ link });
 });
 
-app.get('/view/:id', async (req, res) => {
+app.get('/api/viewnote/:id', async (req, res) => {
   const { data, error } = await supabase
     .from('notes')
     .select('content')
@@ -37,18 +37,22 @@ app.get('/view/:id', async (req, res) => {
     .single();
 
   if (error || !data) {
-    console.error(error);
+    console.log("Tried to find a nonexistent note :(")
     return res.status(404).json({ error: 'Note not found' });
   }
-
+  console.log("note fetched! This is the note:, ", data.content);
   return res.status(200).json({ text: data.content });
 });
 
 
 app.use(express.static('src'));
+app.use('/assets', express.static(__dirname + '/src/assets'));
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/src/main.html');
+});
+app.get('/view/:id', (req, res) => {
+  res.sendFile(__dirname + '/src/main.html'); // This loads your frontend app
 });
 
 app.listen(3000, () => {
