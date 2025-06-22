@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
-const baseUrl = process.env.VERCEL_URL;
+const baseUrl = process.env.BASE_URL;
 
 // save a note
 app.post('/api/note', async (req, res) => {
@@ -45,14 +45,25 @@ app.get('/api/viewnote/:id', async (req, res) => {
 });
 
 
-app.use(express.static('src'));
-app.use('/assets', express.static(__dirname + '/src/assets'));
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, '../public')));
+app.use('/assets', express.static(path.join(__dirname, '../public/assets')));
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/src/main.html');
+  res.sendFile(path.join(__dirname, '../public/main.html'));
 });
 app.get('/view/:id', (req, res) => {
-  res.sendFile(__dirname + '/src/main.html'); // This loads your frontend app
+  res.sendFile(path.join(__dirname, '../public/main.html')); // This loads your frontend app
 });
+
+
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`💌 Love Note Server running at http://localhost:${PORT}`);
+  });
+}
+
 
 module.exports = app;
