@@ -55,6 +55,4 @@ app.get('/view/:id', (req, res) => {
   res.sendFile(__dirname + '/src/main.html'); // This loads your frontend app
 });
 
-app.listen(3000, () => {
-  console.log('💌 Love Note Server running at http://localhost:3000');
-});
+module.exports = app;
