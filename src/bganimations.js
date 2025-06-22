@@ -17,3 +17,17 @@ function startTwinkling() {
 }
 
 startTwinkling();
+
+
+const notearea = document.querySelector('.notearea');
+const charError = document.getElementById('charError');
+const maxLength = parseInt(notearea.getAttribute('maxlength'));
+
+
+notearea.addEventListener('input', () => {
+  if (notearea.value.length === maxLength) {
+    charError.classList.add('visible');
+  } else {
+    charError.classList.remove('visible');
+  }
+});
