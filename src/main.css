@@ -76,7 +76,7 @@ body {
   opacity: 1;
 }
 
-.sealsharebtn {
+#sealsharebtn {
     position: absolute;
     top: calc(38% + 180px);
     left: 15%;
@@ -93,7 +93,7 @@ body {
     box-shadow: 2px 2px 8px rgba(232, 231, 231, 0.5);
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.sealsharebtn:hover {
+#sealsharebtn:hover {
   background-color: #3f6185;
   transform: scale(1.05);
 }
