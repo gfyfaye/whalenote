@@ -13,50 +13,36 @@ app.use(bodyParser.json());
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
 const baseUrl = process.env.BASE_URL;
 
-// save a note
-app.post('/api/note', async (req, res) => {
-  const content = req.body.text;
-  const { data, error } = await supabase.from('notes').insert([{ content }]).select().single();
+// // save a note
+// app.post('/note', async (req, res) => {
+//   const content = req.body.text;
+//   const { data, error } = await supabase.from('notes').insert([{ content }]).select().single();
 
-  if (error) {
-    console.error(error);
-    return res.status(500).json({ error: 'Failed to save note' });
-  }
+//   if (error) {
+//     console.error(error);
+//     return res.status(500).json({ error: 'Failed to save note' });
+//   }
 
-  console.log("note saved!");
-  const id = data.id;
-  const link = `${baseUrl}/view/${id}`;
-  return res.status(200).json({ link });
-});
+//   console.log("note saved!");
+//   const id = data.id;
+//   const link = `${baseUrl}/view/${id}`;
+//   return res.status(200).json({ link });
+// });
 
-app.get('/api/viewnote/:id', async (req, res) => {
-  const { data, error } = await supabase
-    .from('notes')
-    .select('content')
-    .eq('id', req.params.id)
-    .single();
+// app.get('/viewnote/:id', async (req, res) => {
+//   const { data, error } = await supabase
+//     .from('notes')
+//     .select('content')
+//     .eq('id', req.params.id)
+//     .single();
 
-  if (error || !data) {
-    console.log("Tried to find a nonexistent note :(")
-    return res.status(404).json({ error: 'Note not found' });
-  }
-  console.log("note fetched! This is the note:, ", data.content);
-  return res.status(200).json({ text: data.content });
-});
-
-
-const path = require('path');
-
-app.use(express.static(path.join(__dirname, '../public')));
-app.use('/assets', express.static(path.join(__dirname, '../public/assets')));
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/main.html'));
-});
-app.get('/view/:id', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/main.html')); // This loads your frontend app
-});
-
+//   if (error || !data) {
+//     console.log("Tried to find a nonexistent note :(")
+//     return res.status(404).json({ error: 'Note not found' });
+//   }
+//   console.log("note fetched! This is the note:, ", data.content);
+//   return res.status(200).json({ text: data.content });
+// });
 
 if (require.main === module) {
   const PORT = process.env.PORT || 3000;

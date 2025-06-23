@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/**/*.js", "use": "@vercel/node" },
+    { "src": "public/**/*", "use": "@vercel/static" }
+  ],
+  "routes": [
+    {
+      "src":   "/api/note$",
+      "dest":  "/api/note.js"
+    },
+    {
+      "src":   "/api/viewnote/([^/]+)$",
+      "dest":  "/api/viewnote/[id].js?id=$1"
+    },
+    { "src": "/",           "dest": "/public/main.html" },
+    { "src": "/main.html",  "dest": "/public/main.html" },
+    { "src": "/(.*)",       "dest": "/public/$1" }
+  ]
+}

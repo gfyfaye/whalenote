@@ -101,19 +101,32 @@
   transform: translate(-50%, -50%);
   max-height: 80%;
   overflow-y: auto;
-  color: #fff8c9;
+  color: #383838;
   font-family: 'Gaegu', cursive;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: bolder;
   letter-spacing: 1px;
   text-align: center;
   word-break: break-word;
+}
 
-  text-shadow:
-    1px 1px 2px #000,
-    0 0 6px #ffffff,
-    0 0 12px #ffe57f,
-    0 0 18px #ffd740; 
-  
-  animation: glowPulse 1s infinite ease-in-out;
+#create {
+  position: absolute;
+  margin-top: 500px;
+  padding: 3px 9px;
+  font-family: 'Gaegu', cursive;
+  font-size: 1rem;
+  border: none;
+  color: white;
+  text-shadow: 1px 1px 2px rgb(201, 223, 255, 0.5);
+  background-color: #1f3b58;
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 2px 2px 8px rgba(232, 231, 231, 0.5);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#create:hover {
+  background-color: #3f6185;
+  transform: scale(1.05);
 }

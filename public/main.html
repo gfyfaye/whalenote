@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-    <body>
-        <title>Whale Note</title>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> a note for you.. 🐳 </title>
         <script src="https://unpkg.com/lottie-web@latest/build/player/lottie.min.js"></script>
         <!-- MAIN FONT-->
-        <link rel = "stylesheet" href = "/main.css">
+        <link rel = "stylesheet" href = "main.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Gaegu&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-        
-        <img class="bg" src="/assets/blankbg.png" />
-        <img class="stars" src="/assets/stars.png" />
-        <img class="stars" src="/assets/stars2.png" />
-        <img class="stars" src="/assets/stars3.png" />
-        <audio id="bgaudio" src="/assets/bgsound.mp3" preload="auto" loop></audio>
+
+
+    </head>
+    <body>
+        <img class="bg" src="assets/blankbg.png" />
+        <img class="stars" src="assets/stars.png" />
+        <img class="stars" src="assets/stars2.png" />
+        <img class="stars" src="assets/stars3.png" />
+        <audio id="bgaudio" src="assets/bgsound.mp3" preload="auto" loop></audio>
         <div class="audio-container">
             <button class="audio-control">
-                <img id="audioicon" src="/assets/nomusic.png">
+                <img id="audioicon" src="assets/nomusic.png">
             </button>
         </div>
         <p id="credit">made by Grace Yang | image from Ecem_Camilla on Canvas | audio from LolaMoore from freesound.org</p>
@@ -23,7 +29,7 @@
     
 
         <div class="sendnote hidden">
-            <link rel = "stylesheet" href = "/send.css">
+            <link rel = "stylesheet" href = "send.css">
 
             <p id="instructions"> Write A Note<br>Click “Seal & Share”<br>Copy Your Secret Link<br>Send It To Someone Special!</p>
 
@@ -35,7 +41,7 @@
             </div>
 
             <div class="thought hidden">
-                <img src="/assets/bubble.png">
+                <img src="assets/bubble.png">
                 <p>click on the <br>link to copy it!</p>
             </div>
 
@@ -45,7 +51,7 @@
 
 
         <div class="viewnote hidden">
-            <link rel = "stylesheet" href = "/view.css">
+            <link rel = "stylesheet" href = "view.css">
 
             <div id="noteError" class="hidden">
                 <p>❌ Sorry, this note doesn't exist.</p>
@@ -53,7 +59,7 @@
             <div id="hearts"></div>
 
             <div id="noteInterface" class="hidden">
-                <img src="/assets/paper.jpeg" class="notesheet hidden">
+                <img src="assets/paper.jpeg" class="notesheet hidden">
                 <div id="animation"></div>
                 <p id="clickPrompt">click repeatedly to open!</p>
                 <div id="progressContainer">
@@ -62,13 +68,14 @@
             </div>
 
             <div id="noteSheet" class="hidden">
-                <img id="notebg" src="/assets/paper.jpeg">
+                <img id="notebg" src="assets/paper.jpeg">
                 <p id="notecontent"></p>
+                <button id="create" onclick="location.href='/'"> create my own note</button>
             </div>
         </div>
 
-        <script src="/main.js"></script>
-        <script src="/send.js"></script>
-        <script src="/view.js"></script>
+        <script src="main.js"></script>
+        <script src="send.js"></script>
+        <script src="view.js"></script>
     </body>
-
+</html>

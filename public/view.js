@@ -13,7 +13,7 @@ function setupHeartsAnimation() {
     renderer: 'svg',
     loop: false,
     autoplay: false,
-    path: '/assets/hearts.json'
+    path: 'assets/hearts.json'
   });
 }
 
@@ -44,7 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
     renderer: 'svg',
     loop: false,
     autoplay: false,
-    path: '/assets/envelope.json'
+    path: 'assets/envelope.json'
   });
 
   //start at frame 35
