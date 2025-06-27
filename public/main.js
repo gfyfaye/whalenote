@@ -4,6 +4,7 @@ const isViewing = pathParts[1] === 'view';
 const noteId = pathParts[2];
 
 
+//handles whether the sendnote or viewnote div is showing
 if (isViewing && noteId) {
   document.querySelector('.sendnote').classList.add('hidden');
   document.querySelector('.viewnote').classList.remove('hidden');
