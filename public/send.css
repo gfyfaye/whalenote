@@ -70,7 +70,7 @@
   z-index: 3;
   position: absolute;
   top: 42%;
-  left: 11%;
+  left: 30%;
   font-family: 'Gaegu', cursive;
   font-size: 1.2em;
   color: white;
@@ -125,4 +125,10 @@
 
 .fade-element.visible {
   opacity: 0.8;
+}
+
+#noteLink {
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
 }
