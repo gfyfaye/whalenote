@@ -46,7 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
           document.getElementById('sealsharebtn').classList.add('hidden');
           const resultMsg = document.getElementById('resultMessage');
           resultMsg.classList.remove('hidden');
-          resultMsg.innerHTML = `Your note is sealed! Share this link:<span id="noteLink" class="copyable">${data.link}</span>`;
+          // show the word "link" but store the real URL in a data attribute so clicking copies the URL
+          resultMsg.innerHTML = `Your note is sealed! Share this <span id="noteLink" class="copyable" data-url="${data.link}">link</span>`;
           document.querySelector('.thought').classList.remove('hidden');
       } else {
         alert(`Failed to send note: ${data.error}`);
@@ -61,9 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener('click', function (e) {
     if (e.target.id === 'noteLink') {
-      const originalText = e.target.textContent;
+      // prefer the hidden URL stored in data-url; fall back to visible text
+      const urlToCopy = e.target.getAttribute('data-url') || e.target.textContent;
 
-      navigator.clipboard.writeText(originalText)
+      navigator.clipboard.writeText(urlToCopy)
         .then(() => {
           copiedMessage.classList.add('visible');
 
